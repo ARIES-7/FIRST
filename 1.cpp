@@ -24,10 +24,29 @@ int change(char x[]){
 		return 9;
 	if(strcmp(x,"十") == 0)
 		return 10;
+	if(strcmp(x,"十一") == 0)
+		return 11;
+	if(strcmp(x,"十二") == 0)
+		return 12;
+	if(strcmp(x,"十三") == 0)
+		return 13;
+	if(strcmp(x,"十四") == 0)
+		return 14;
+	if(strcmp(x,"十五") == 0)
+		return 15;
+	if(strcmp(x,"十六") == 0)
+		return 16;
+	if(strcmp(x,"十七") == 0)
+		return 17;
+	if(strcmp(x,"十八") == 0)
+		return 18;
+	if(strcmp(x,"十九") == 0)
+		return 19;
+	if(strcmp(x,"二十") == 0)
+		return 20;
 }
 
 void change2(int a){
-	int x,y;
 	if(a == 0)
 		printf("零");
 	if(a < 0)
@@ -58,9 +77,11 @@ void change2(int a){
 		}
 	}
 	if(a/10%10 != 0){
+		if(a/100 != 0 && a/10%10 == 1)
+			printf("一");
 		switch(a/10%10){
 			case 1:
-				printf("一十");break;
+				printf("十");break;
 			case 2:
 				printf("二十");break;
 			case 3:
@@ -79,7 +100,7 @@ void change2(int a){
 				printf("九十");break;	
 		}
 	}
-	else 
+	if(a/100 != 0 && a/10%10 == 0) 
 		printf("零");
 	if(a%10 != 0){
 		switch(a%10){
@@ -129,7 +150,7 @@ int main(){
 	int change(char x[]);
 	void change2(int a);
 	void tq(char y[]);
-	while(scanf("%s",&y1)){
+	while(scanf("%s",y1)){
 		if(strcmp(y1,"整数") == 0){
 			if(flag == 0){
 				scanf("%s %s %s",&x1,&x3,&x4);
