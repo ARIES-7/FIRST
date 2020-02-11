@@ -30,35 +30,37 @@ void change2(int a){
 	int x,y;
 	if(a == 0)
 		printf("零");
-	if(a%10 == 0)
-	{
-		switch(a/10){
+	if(a < 0)
+	{	
+		printf("负");
+		a=-a;
+	}
+	if(a/100 != 0){
+		switch(a/100){
 			case 1:
-				printf("十");break;
+				printf("一百");break;
 			case 2:
-				printf("二十");break;
+				printf("二百");break;
 			case 3:
-				printf("三十");break;
+				printf("三百");break;
 			case 4:
-				printf("四十");break;
+				printf("四百");break;
 			case 5:
-				printf("五十");break;
+				printf("五百");break;
 			case 6:
-				printf("六十");break;
+				printf("六百");break;
 			case 7:
-				printf("七十");break;
+				printf("七百");break;
 			case 8:
-				printf("八十");break;
+				printf("八百");break;
 			case 9:
-				printf("九十");break;
+				printf("九百");break;
 		}
 	}
-	else{
-		x=a/10;
-		y=a%10;
-		switch(x){
+	if(a/10%10 != 0){
+		switch(a/10%10){
 			case 1:
-				printf("十");break;
+				printf("一十");break;
 			case 2:
 				printf("二十");break;
 			case 3:
@@ -74,9 +76,13 @@ void change2(int a){
 			case 8:
 				printf("八十");break;
 			case 9:
-				printf("九十");break;
+				printf("九十");break;	
 		}
-		switch(y){
+	}
+	else 
+		printf("零");
+	if(a%10 != 0){
+		switch(a%10){
 			case 1:
 				printf("一");break;
 			case 2:
@@ -96,7 +102,6 @@ void change2(int a){
 			case 9:
 				printf("九");break;
 		}
-	
 	}
 }
 
